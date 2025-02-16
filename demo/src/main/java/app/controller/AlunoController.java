@@ -18,16 +18,16 @@ import app.entity.Aluno;
 import app.service.AlunoService;
 
 @RestController
-@RequestMapping("/aluno")
+@RequestMapping("api/aluno")
 public class AlunoController {
 	
 	@Autowired
 	private AlunoService alunoService;
 	
 	@PostMapping("/save")
-	public ResponseEntity<String> save(@RequestBody Aluno autor){
+	public ResponseEntity<String> save(@RequestBody Aluno aluno){
 		try {
-			String mensagem = this.alunoService.save(autor);
+			String mensagem = this.alunoService.save(aluno);
 			return new ResponseEntity<>(mensagem, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>("Deu erro!", HttpStatus.BAD_REQUEST);

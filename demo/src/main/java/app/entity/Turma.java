@@ -5,8 +5,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,14 +35,20 @@ public class Turma {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@NotEmpty (message = "o nome da Turma é obrigatorio")
 	private String nomeTurma;
 	private String semestre;
 	private String ano;
-	private String Turno;
+	private String turno;
 	
 	@OneToMany
 	(mappedBy = "turma")
     private List<Aluno> alunos; 
+	
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
+
 	
 	@OneToMany
 	(mappedBy = "turma")

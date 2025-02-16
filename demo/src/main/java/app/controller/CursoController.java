@@ -18,7 +18,7 @@ import app.entity.Curso;
 import app.service.CursoService;
 
 @RestController
-@RequestMapping("/curso")
+@RequestMapping("api/curso")
 public class CursoController {
 	
 	@Autowired

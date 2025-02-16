@@ -12,6 +12,8 @@ import lombok.Setter;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -29,8 +31,10 @@ public class Aluno {
 	private long id;
 	
 	@Pattern
-	(regexp = "^\\S+\\s+\\S+.*$")
+	(regexp = "^\\S+\\s+\\S+.*$", message = "O nome do Aluno deve conter ao menos duas palavras separadas.")
 	private String nomeAluno;
+	
+	@CPF
 	private String cpf;
 	private String telefone;
 	

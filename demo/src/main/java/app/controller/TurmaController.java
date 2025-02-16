@@ -18,7 +18,7 @@ import app.entity.Turma;
 import app.service.TurmaService;
 
 @RestController
-@RequestMapping("/turma")
+@RequestMapping("api/turma")
 public class TurmaController {
 	
 	@Autowired

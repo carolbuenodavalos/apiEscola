@@ -18,7 +18,7 @@ import app.entity.Professor;
 import app.service.ProfessorService;
 
 @RestController
-@RequestMapping("/professor")
+@RequestMapping("api/professor")
 public class ProfessorController {
 	
 	@Autowired
