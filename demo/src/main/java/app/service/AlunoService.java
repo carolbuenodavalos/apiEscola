@@ -24,9 +24,9 @@ public class AlunoService {
 
 	public String update(long id, Aluno aluno) {
 		aluno.setId(id);
-		this.alunoRepository.save(aluno); 
+		this.alunoRepository.save(aluno); //-> qdo tem ID vira UPDATE livro SET ....
 		return "Informações do aluno salvo com sucesso";
-	}
+	} 
 	
 	public String delete(long id) {
 		this.alunoRepository.deleteById(id);

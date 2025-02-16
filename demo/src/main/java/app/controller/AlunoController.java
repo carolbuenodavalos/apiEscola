@@ -18,7 +18,7 @@ import app.entity.Aluno;
 import app.service.AlunoService;
 
 @RestController
-@RequestMapping("/api/aluno")
+@RequestMapping("/aluno")
 public class AlunoController {
 	
 	@Autowired

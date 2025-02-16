@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import app.entity.Aluno;
 import app.entity.Professor;
 import app.repository.ProfessorRepository;
 
@@ -24,9 +25,9 @@ public class ProfessorService {
 
 	public String update(long id, Professor professor) {
 		professor.setId(id);
-		this.professorRepository.save(professor); 
-		return "Informações do Professor foi atualizado com sucesso";
-	}
+		this.professorRepository.save(professor); //-> qdo tem ID vira UPDATE livro SET ....
+		return "Informações do aluno salvo com sucesso";
+	} 
 	
 	public String delete(long id) {
 		this.professorRepository.deleteById(id);
